@@ -1,0 +1,28 @@
+<div class="container my-4 card p-4">
+  <h2 class="mb-4">{{ bucket.name }}</h2>
+  <div class="mb-3">
+    <input type="file" class="form-control-file" (change)="onFileSelected($event)" />
+    <button class="btn btn-primary mt-2" (click)="uploadFile()">Upload File</button>
+  </div>
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Name</th>
+        <th>Size (KB)</th>
+        <th>Modified</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let file of bucket.files">
+        <td>{{ file.name }}</td>
+        <td>{{ file.size }} KB</td>
+        <td>{{ file.modified | date:'short' }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteFile(file.name)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-secondary mt-3" (click)="viewBucketDetails()">Bucket Details</button>
+</div>

@@ -1,0 +1,17 @@
+<div class="container my-4 card p-4">
+    <h2 class="mb-4">Create New Bucket</h2>
+    <div class="form-group">
+      <label for="bucketName">Bucket Name</label>
+      <input type="text" id="bucketName" class="form-control" [(ngModel)]="bucketName" placeholder="Enter bucket name" />
+    </div>
+    <div class="form-group">
+      <label for="bucketLocation">Bucket Location</label>
+      <select id="bucketLocation" class="form-control" [(ngModel)]="bucketLocation" style="max-width:200px;">
+        <option value="Kranj">Kranj</option>
+        <option value="Maribor">Maribor</option>
+        <option value="Ljubljana">Ljubljana</option>
+      </select>
+    </div>
+    <button class="btn btn-primary mt-3" (click)="createBucket()">Create Bucket</button>
+  </div>
+  

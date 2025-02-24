@@ -1,0 +1,9 @@
+<div class="container my-4 card p-4">
+    <h2 class="mb-4">Bucket Details</h2>
+    <p><strong>Name:</strong> {{ bucket.name }}</p>
+    <p><strong>Location:</strong> {{ bucket.location }}</p>
+    <p><strong>Total Size:</strong> {{ size }} bytes</p>
+    <button class="btn btn-danger" (click)="deleteBucket()">Delete Bucket</button>
+    <button class="btn btn-secondary ml-2" (click)="goBack()">Back to Files</button>
+  </div>
+  

@@ -1,0 +1,24 @@
+<div class="container my-4 card p-4">
+  <h2 class="mb-4">Bucket List</h2>
+  
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bucket of buckets">
+        <td>
+          <a [routerLink]="['/bucket', bucket.name]" class="text-primary">{{ bucket.name }}</a>
+        </td>
+        <td>{{ bucket.location }}</td>
+        <td>
+          <button class="btn btn-secondary" (click)="viewBucket(bucket.name)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
